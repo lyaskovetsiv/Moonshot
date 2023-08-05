@@ -17,6 +17,7 @@
 		A0C5E19F2A7E80C700808C4F /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = A0C5E19D2A7E80C700808C4F /* missions.json */; };
 		A0C5E1A02A7E80C700808C4F /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = A0C5E19E2A7E80C700808C4F /* astronauts.json */; };
 		A0C5E1A52A7E94C200808C4F /* Color-Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C5E1A42A7E94C200808C4F /* Color-Theme.swift */; };
+		A0C5E1A72A7E9A6700808C4F /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C5E1A62A7E9A6700808C4F /* MissionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		A0C5E19D2A7E80C700808C4F /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
 		A0C5E19E2A7E80C700808C4F /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
 		A0C5E1A42A7E94C200808C4F /* Color-Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Theme.swift"; sourceTree = "<group>"; };
+		A0C5E1A62A7E9A6700808C4F /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			children = (
 				A07F44A12A7E738F00D393BB /* MoonshotApp.swift */,
 				A07F44A32A7E738F00D393BB /* ContentView.swift */,
+				A0C5E1A62A7E9A6700808C4F /* MissionView.swift */,
 				A0C5E1A42A7E94C200808C4F /* Color-Theme.swift */,
 				A0C5E1A12A7E934B00808C4F /* JSON */,
 				A0C5E1A22A7E935100808C4F /* Models */,
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0C5E1A72A7E9A6700808C4F /* MissionView.swift in Sources */,
 				A07F44A42A7E738F00D393BB /* ContentView.swift in Sources */,
 				A0C5E1A52A7E94C200808C4F /* Color-Theme.swift in Sources */,
 				A07F44A22A7E738F00D393BB /* MoonshotApp.swift in Sources */,
