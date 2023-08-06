@@ -13,6 +13,30 @@ struct ListLayout: View {
 	let astronauts: [String: Astronout]
 	
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+		List {
+			ForEach(missions) { mission in
+				NavigationLink {
+					MissionView(mission: mission, astronouts: astronauts)
+				} label: {
+					HStack {
+						Image(mission.image)
+							.resizable()
+							.scaledToFit()
+							.frame(width: 80, height: 80)
+							.padding(.trailing)
+						VStack (alignment: .leading) {
+							Text(mission.displayName)
+								.font(.title2)
+								.foregroundColor(.white)
+							Text(mission.formattedLaunchDate)
+								.font(.headline)
+								.foregroundColor(.white.opacity(0.5))
+						}
+					}
+				}
+			}
+		}
+		.listStyle(.plain)
+		.listRowBackground(Color.darkBackgroundColor)
     }
 }
