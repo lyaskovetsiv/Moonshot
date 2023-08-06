@@ -27,13 +27,27 @@ struct MissionView: View {
 						.frame(maxWidth: geo.size.width * 0.6)
 						.padding(.top)
 					
+					
 					VStack (alignment: .leading) {
+						Rectangle()
+							.frame(width: .infinity, height: 2)
+							.foregroundColor(.lightBackgroundColor)
+							.padding(.vertical)
 						Text("Mission Highlights")
 							.font(.title.bold())
 							.foregroundColor(.white)
 							.padding(.bottom, 5)
 						Text(mission.description)
 							.foregroundColor(.white)
+						Rectangle()
+							.frame(width: .infinity, height: 2)
+							.foregroundColor(.lightBackgroundColor)
+							.padding(.vertical)
+						
+						Text("Crew")
+							.font(.title.bold())
+							.foregroundColor(.white)
+							.padding(.bottom, 5)
 					}
 					.padding(.horizontal)
 					
