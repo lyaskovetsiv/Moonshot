@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 	
-	let astronouts: [String: Astronout] = Bundle.main.decode("astronauts.json")
+	let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
 	let missions: [Mission] = Bundle.main.decode("missions.json")
 	
 	@State private var showingGrid = true
@@ -18,9 +18,9 @@ struct ContentView: View {
 		NavigationView {
 			Group {
 				if showingGrid {
-					GridLayout(missions: missions, astronauts: astronouts)
+					GridLayout(missions: missions, astronauts: astronauts)
 				} else {
-					ListLayout(missions: missions, astronauts: astronouts)
+					ListLayout(missions: missions, astronauts: astronauts)
 				}
 			}
 			.navigationTitle("Moonshot")

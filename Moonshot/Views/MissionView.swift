@@ -62,12 +62,12 @@ struct MissionView: View {
 		.background(.darkBackgroundColor)
 	}
 	
-	init(mission: Mission, astronouts: [String: Astronout]) {
+	init(mission: Mission, astronauts: [String: Astronaut]) {
 		self.mission = mission
 		self.crew = mission.crew.map({ member in
-			if let astronaut = astronouts[member.name] {
+			if let astronaut = astronauts[member.name] {
 				return CrewMember(role: member.role,
-								  astronout: astronaut)
+								  astronaut: astronaut)
 			} else {
 				fatalError("Missing \(member.name)")
 			}
@@ -77,10 +77,10 @@ struct MissionView: View {
 
 struct MissionView_Previews: PreviewProvider {
 	static let missions: [Mission] = Bundle.main.decode("missions.json")
-	static let astronouts: [String: Astronout] = Bundle.main.decode("astronauts.json")
+	static let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
 	
     static var previews: some View {
-        MissionView(mission: missions[0], astronouts: astronouts)
+        MissionView(mission: missions[0], astronauts: astronauts)
 			.preferredColorScheme(.dark)
     }
 }

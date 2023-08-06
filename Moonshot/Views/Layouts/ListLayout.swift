@@ -10,13 +10,13 @@ import SwiftUI
 struct ListLayout: View {
 	
 	let missions: [Mission]
-	let astronauts: [String: Astronout]
+	let astronauts: [String: Astronaut]
 	
     var body: some View {
 		List {
 			ForEach(missions) { mission in
 				NavigationLink {
-					MissionView(mission: mission, astronouts: astronauts)
+					MissionView(mission: mission, astronauts: astronauts)
 				} label: {
 					HStack {
 						Image(mission.image)
@@ -34,9 +34,9 @@ struct ListLayout: View {
 						}
 					}
 				}
+				.listRowBackground(Color.darkBackgroundColor)
 			}
 		}
 		.listStyle(.plain)
-		.listRowBackground(Color.darkBackgroundColor)
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct GridLayout: View {
 	
 	let missions: [Mission]
-	let astronauts: [String: Astronout]
+	let astronauts: [String: Astronaut]
 	let columns = [GridItem(.adaptive(minimum: 150))]
 	
     var body: some View {
@@ -18,7 +18,7 @@ struct GridLayout: View {
 			LazyVGrid(columns: columns) {
 				ForEach(missions) { mission in
 					NavigationLink {
-						MissionView(mission: mission, astronouts: astronauts)
+						MissionView(mission: mission, astronauts: astronauts)
 					} label: {
 						VStack {
 							Image(mission.image)

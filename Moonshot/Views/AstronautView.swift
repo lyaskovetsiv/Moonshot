@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AstronautView: View {
 	
-	let astronaut: Astronout
+	let astronaut: Astronaut
 	
     var body: some View {
 		ScrollView {
@@ -30,7 +30,7 @@ struct AstronautView: View {
 }
 
 struct AstronautView_Previews: PreviewProvider {
-	static let astronauts: [String: Astronout] = Bundle.main.decode("astronauts.json")
+	static let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
 	
     static var previews: some View {
         AstronautView(astronaut: astronauts["armstrong"]!)

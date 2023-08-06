@@ -9,5 +9,5 @@ import Foundation
 
 struct CrewMember {
 	let role: String
-	let astronout: Astronout
+	let astronaut: Astronaut
 }

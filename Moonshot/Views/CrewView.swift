@@ -16,10 +16,10 @@ struct CrewView: View {
 		HStack {
 			ForEach(crew, id: \.role) { crewMember in
 				NavigationLink {
-					AstronautView(astronaut: crewMember.astronout)
+					AstronautView(astronaut: crewMember.astronaut)
 				} label: {
 					HStack {
-						Image(crewMember.astronout.id)
+						Image(crewMember.astronaut.id)
 							.resizable()
 							.frame(width: 102, height: 74)
 							.clipShape(Capsule())
@@ -29,7 +29,7 @@ struct CrewView: View {
 							}
 						
 						VStack(alignment: .leading) {
-							Text(crewMember.astronout.name)
+							Text(crewMember.astronaut.name)
 								.foregroundColor(.white)
 								.font(.headline)
 							Text(crewMember.role)
