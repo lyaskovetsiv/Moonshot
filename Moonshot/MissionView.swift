@@ -9,11 +9,6 @@ import SwiftUI
 
 struct MissionView: View {
 	
-	struct CrewMember {
-		let role: String
-		let astronout: Astronout
-	}
-	
 	let mission: Mission
 	let crew: [CrewMember]
 	
@@ -27,10 +22,14 @@ struct MissionView: View {
 						.frame(maxWidth: geo.size.width * 0.6)
 						.padding(.top)
 					
+					Text("Date: \(mission.formattedLaunchDate)")
+						.fontWeight(.bold)
+						.padding(.top)
+						.font(.headline)
 					
 					VStack (alignment: .leading) {
 						Rectangle()
-							.frame(width: .infinity, height: 2)
+							.frame(height: 2)
 							.foregroundColor(.lightBackgroundColor)
 							.padding(.vertical)
 						Text("Mission Highlights")
@@ -40,7 +39,7 @@ struct MissionView: View {
 						Text(mission.description)
 							.foregroundColor(.white)
 						Rectangle()
-							.frame(width: .infinity, height: 2)
+							.frame(height: 2)
 							.foregroundColor(.lightBackgroundColor)
 							.padding(.vertical)
 						
@@ -52,34 +51,7 @@ struct MissionView: View {
 					.padding(.horizontal)
 					
 					ScrollView(.horizontal, showsIndicators: false) {
-						HStack {
-							ForEach(crew, id: \.role) { crewMember in
-								NavigationLink {
-									AstronautView(astronaut: crewMember.astronout)
-								} label: {
-									HStack {
-										Image(crewMember.astronout.id)
-											.resizable()
-											.frame(width: 102, height: 74)
-											.clipShape(Capsule())
-											.overlay {
-												Capsule()
-													.strokeBorder(.white, lineWidth: 1)
-											}
-										
-										VStack(alignment: .leading) {
-											Text(crewMember.astronout.name)
-												.foregroundColor(.white)
-												.font(.headline)
-											Text(crewMember.role)
-												.foregroundColor(.secondary)
-											
-										}
-									}
-									.padding(.horizontal)
-								}
-							}
-						}
+						CrewView(mission: mission, crew: crew)
 					}
 				}
 				.padding(.bottom)
