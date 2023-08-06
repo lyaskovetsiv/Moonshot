@@ -9,7 +9,13 @@ import SwiftUI
 
 struct MissionView: View {
 	
+	struct CrewMember {
+		let role: String
+		let astronout: Astronout
+	}
+	
 	let mission: Mission
+	let crew: [CrewMember]
 	
 	var body: some View {
 		GeometryReader { geo in
@@ -38,13 +44,26 @@ struct MissionView: View {
 		.navigationBarTitleDisplayMode(.inline)
 		.background(.darkBackgroundColor)
 	}
+	
+	init(mission: Mission, astronouts: [String: Astronout]) {
+		self.mission = mission
+		self.crew = mission.crew.map({ member in
+			if let astronaut = astronouts[member.name] {
+				return CrewMember(role: member.role,
+								  astronout: astronaut)
+			} else {
+				fatalError("Missing \(member.name)")
+			}
+		})
+	}
 }
 
 struct MissionView_Previews: PreviewProvider {
 	static let missions: [Mission] = Bundle.main.decode("missions.json")
+	static let astronouts: [String: Astronout] = Bundle.main.decode("astronauts.json")
 	
     static var previews: some View {
-        MissionView(mission: missions[0])
+        MissionView(mission: missions[0], astronouts: astronouts)
 			.preferredColorScheme(.dark)
     }
 }
